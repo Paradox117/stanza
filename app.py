@@ -1,12 +1,12 @@
 from flask import Flask, render_template
 from views import views
 from datetime import timedelta
-
+import os
 
 app = Flask(__name__)
 app.register_blueprint(views)
 app.permanent_session_lifetime = timedelta(days=7)
-app.config["SECRET_KEY"] = "a;lkdsj;fjads jfasdf asd ndsvsad;vnsdfghuirhoiqwieoihnv cv"
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 
 @app.errorhandler(404)
