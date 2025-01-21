@@ -1,0 +1,17 @@
+main {
+    display: block;
+}
+
+.list-outer {
+    padding: 0;
+}
+
+.list {
+    height: unset;
+    overflow: unset;
+}
+
+.list-row, .list-heading {
+    grid-template-columns: 5rem 2fr 2fr 10rem 2fr 2fr 1.2fr 6rem 3rem;
+    gap: 1.5rem
+}

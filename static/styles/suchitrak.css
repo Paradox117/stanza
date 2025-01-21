@@ -1,0 +1,30 @@
+main {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper h1 {
+    text-align: center;
+}
+
+button {
+    text-decoration: none;
+    font-size: 2.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 5rem;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+button:hover {
+    color: var(--color-yellow);
+}

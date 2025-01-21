@@ -1,0 +1,157 @@
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: calc(100vh - 6rem - 7rem - 5rem);
+}
+
+.data {
+    display: flex;
+    height: calc(100vh - 6rem - 7rem - 5rem - 10rem);
+    column-gap: 2rem;
+    border-right: 0.2rem solid var(--color-black);
+    padding-right: 1rem;
+}
+
+h1.overflow {
+    height: 5.5rem;
+}
+
+.img {
+    height: 100%;
+}
+
+img {
+    height: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0;
+}
+
+.bottom {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-auto-flow: row;
+}
+
+form {
+    padding-left: 1rem;
+    height: 100%;
+}
+
+.pay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+}
+
+.price h2 {
+    font-weight: 400;
+}
+
+.left {
+    text-align: left;
+    align-content: center;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+}
+
+.right {
+    text-align: right;
+    align-content: center;
+}
+
+input {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    border: var(--color-green) solid 0.2rem;
+    background-color: transparent;
+    border-radius: 5rem;
+
+}
+
+input[type=number] {
+    width: 3.5rem;
+    padding: 0 0.5rem;
+}
+
+
+input[type=number] {
+    appearance: unset;
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+}
+
+#push-left {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.pay h1 {
+    margin-bottom: 1rem;
+}
+
+.price {
+    border-bottom: 0.1rem dashed var(--color-black);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pay {
+    border-bottom: 0.1rem solid var(--color-black);
+    height: 57.2%;
+}
+
+.addr {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 42.5%;
+    align-items: center;
+    gap: 5%;
+}
+
+input[type=text] {
+    padding: 0.5rem 1rem;
+    width: 80%;
+}
+
+input[type=submit] {
+    font-size: 2rem;
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border: none;
+    padding: 0.2rem 1rem;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    color: var(--color-yellow);
+}
+
+
+.add {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    border-bottom: 0.1rem dashed var(--color-black);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}

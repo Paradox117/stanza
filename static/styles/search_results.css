@@ -1,0 +1,37 @@
+form {
+    display: flex;
+    gap: 0.5rem;
+    height: 6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.inp-txt {
+    font-size: 1.5rem;
+    background-color: transparent;
+    text-decoration: none;
+    border: 0.2rem solid var(--color-green);
+    color: var(--color-white);
+    padding: 0.2rem 1rem;
+    border-radius: 5rem;
+    max-height: 2.2rem;
+}
+
+.inp-sub {
+    background-color: var(--color-green);
+    text-decoration: none;
+    border: 0.2rem solid var(--color-green);
+    padding: 0.2rem 1rem;
+    border-radius: 5rem;
+    max-height: 2.2rem;
+}
+
+.inp-sub * {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    transition: color 0.1s;
+}
+
+.inp-sub:hover * {
+    color: var(--color-yellow);
+}

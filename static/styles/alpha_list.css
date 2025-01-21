@@ -1,0 +1,36 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+}
+
+.alpha {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.alpha h1 {
+    color: var(--color-green);
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+.list h2 a {
+    font-size: 2rem;
+    transition: color 0.1s;
+}
+
+.list h2 a:hover {
+    color: var(--color-green);
+}
+
+.cont {
+    margin-bottom: 3rem;
+}

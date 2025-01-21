@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+* {
+    margin: unset;
+    padding: unset;
+    box-sizing: border-box;
+    font-family: "Lora";
+}
+
+body {
+    --color-red: #714133;
+    --color-white: #FFECD1;
+    --color-black: #2F2F2F;
+    --color-yellow: #EDD892;
+    --color-green: #6F7C12;
+    --color-red-old: #CC444B;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+
+
+
+@media (max-width: 1800px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 1450px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 1250px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 1100px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 40%;
+    }
+}
+

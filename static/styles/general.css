@@ -1,0 +1,17 @@
+main {
+    background-color: var(--color-white);
+    padding: 5rem;
+    min-height: calc(100vh - 6rem - 7rem - 5rem);
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.heading h1 {
+    color: var(--color-white);
+    font-size: 5rem;
+    font-variant-caps: small-caps;
+}

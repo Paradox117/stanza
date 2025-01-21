@@ -1,0 +1,22 @@
+body {
+    background-image: url("back.png");
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+main * {
+    color: var(--color-black);
+}
+
+footer {
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-white);
+}
+
+h3 a {
+    cursor: text;
+}

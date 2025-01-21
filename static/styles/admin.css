@@ -1,0 +1,32 @@
+main {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border: 0.2rem transparent solid;
+    width: 25rem;
+}
+
+.inner:hover {
+    border: dashed 0.2rem var(--color-green);
+}
+
+.symbol {
+    font-size: 10rem;
+    color: var(--color);
+}
+
+.outer {
+    display: flex;
+    gap: 2rem;
+}

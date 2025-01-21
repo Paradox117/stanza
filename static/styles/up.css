@@ -1,0 +1,176 @@
+main{
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+#pfp{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#dp{
+    display: block;
+    border:solid var(--color-red) 0.7rem;
+    height: 23rem;
+    width: 23rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    
+} 
+#pdiv{
+    align-items: right;
+    padding-left: 15rem;
+    padding-bottom: 2rem;
+}
+#user{
+    font-size: 5rem;
+}
+#dpt{
+    display:flex;
+    flex-direction: column;
+}
+.dpte{
+    padding-bottom: 1rem;
+    border-bottom: solid 0.2rem;
+}
+.youser{
+    font-size:2rem ;
+}
+.agn{
+    text-align:center;
+}
+#orh{
+    padding-bottom: 1rem;
+    border-bottom: solid 0.2rem;
+}
+#details{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.mar {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.pad {
+    padding-left: 2rem;
+}
+
+input {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    border: var(--color-green) solid 0.2rem;
+    background-color: transparent;
+    border-radius: 5rem;
+
+}
+
+form {
+    margin-top: 2rem;
+}
+
+input[type=submit] {
+    font-size: 2rem;
+    color: var(--color-white);
+    background-color: var(--color-red-old);
+    border: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    color: var(--color-yellow);
+}
+
+#orders {
+    display: flex;
+    flex-direction: column;
+}
+
+.order {
+    display: flex;
+    height: 20rem;
+    width: 100%;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.order img {
+    width: unset;
+}
+
+.order:not(:last-child) {
+    border-bottom: 0.2rem dashed var(--color-black);
+}
+
+.order:last-child {
+    border-bottom: 0.2rem solid var(--color-black);
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    width: 100%;
+    gap: 1rem;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bottom {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.track {
+    height: 1.5rem;
+    background-color: var(--color-green);
+}
+
+.outline {
+    width: 100%;
+    border: 0.15rem solid var(--color-black);
+    padding: 0.2rem;
+}
+
+.under {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+order-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.up {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.price {
+    font-size: 5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.sec {
+    padding-bottom: 2rem;
+}
+
+main a {
+    transition: color 0.1s;
+}
+
+main a:hover {
+    color: var(--color-green);
+}

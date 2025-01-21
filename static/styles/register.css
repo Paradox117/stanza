@@ -1,0 +1,66 @@
+.inp-txt {
+    width: 85%;
+}
+
+#user {
+    margin-bottom: 1.2rem;
+}
+
+#message {
+    margin-bottom: 0.5rem;
+}
+
+.inp-rem {
+    justify-content: left;
+    margin-bottom: 0;
+}
+
+
+.tags {
+    gap: 0.7rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 1rem;
+}
+
+
+#message {
+    color: var(--color-white);
+}
+
+#message h2 {
+    color: inherit;
+}
+
+.form-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+    padding-right: 1rem;
+}
+
+.side-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1rem;
+    overflow-y: scroll;
+    max-height: 15rem;
+}
+
+.prof {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 25rem;
+}
+
+#re-passwd {
+    margin-bottom: 1rem;
+}

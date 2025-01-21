@@ -1,0 +1,175 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    height: calc(100vh - 4.5rem)
+
+}
+
+footer {
+    display: none;
+}
+
+#bookpicture {
+    margin: unset;
+}
+
+.image {
+    margin: unset;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem;
+}
+
+.image a {
+    height: 40rem;
+}
+
+
+img {
+    height: 100%;
+}
+
+/* .image:hover {
+    width: 36rem;
+} */
+.bookname {
+    color: var(--color-black);
+
+    font-size: 4rem;
+
+    margin-bottom: 1rem;
+}
+
+.nestede {
+    display: flex;
+    flex-direction: column;
+}
+
+.agn {
+    text-align: center;
+}
+
+.subh {
+    font-size: 2.5rem;
+    border-bottom: 0.2rem var(--color-black) solid;
+}
+
+.fh {
+
+    font-size: 1.5rem;
+    font-weight: lighter;
+    display: grid;
+    grid-template-columns: 1fr 10rem 1fr;
+}
+
+.agn1{
+    text-align:center;
+}
+
+.b {
+    border-bottom: 0.2rem var(--color-black) solid;
+}
+#price{
+    padding-top: 2rem;
+}
+#bpbody{
+    display:flex;
+    flex-direction: column;
+}
+#about{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    height: 12rem;
+    overflow-y: scroll;
+}
+#btn{
+   
+    background-color: var(--color-red); 
+    color: var(--color-white);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    display: inline;
+    border-radius: 2rem;
+    transition: color 0.1s;
+}
+#btn:hover  {
+    color: var(--color-yellow) ;
+}
+.fleks{
+    display:flex;
+    flex-direction: row;
+}
+#authn{
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: grid;
+}
+#qtystat1{
+    padding-left: 0.5rem;
+    color: var(--color-green);
+}
+
+#qtystat2{
+    padding-left: 0.5rem;
+    color: var(--color-red-old);
+}
+
+
+/* .space{
+    display:flex;
+    flex-direction:row;
+} */
+
+/* --color-red: #714133;
+--color-white: #FFECD1;
+--color-black: #2F2F2F;
+--color-yellow: #EDD892;
+--color-green: #6F7C12;
+--color-red-old: #CC444B; */
+
+
+button {
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border: unset;
+    text-decoration: unset;
+    border-radius: 5rem;
+    font-size: 2.5rem;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+button:hover {
+    color: var(--color-yellow);
+}
+
+button:disabled {
+    background-color: grey;
+    cursor: default;
+}
+
+button:disabled:hover {
+    color: var(--color-white);
+}
+
+#left {
+    text-align: left;
+}
+
+#center {
+    text-align: center;
+}
+
+#right {
+    text-align: right;
+}
+
+#authn h2 {
+    font-size: 2.5rem;
+}
+
+#info {
+    margin-top: 1rem;
+}

@@ -1,0 +1,70 @@
+nav {
+    height: 4.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-color: var(--color-red);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    position: sticky;
+    top: 0;
+}
+
+.nav-txt {
+    color: var(--color-white);
+    font-variant-caps: small-caps;
+}
+
+.nav-but-txt {
+    color: var(--color-white)
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 2rem;
+}
+
+.nav-centre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 2rem;
+}
+
+.nav-but {
+    padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+
+a .nav-but * {
+    color: var(--color-white);
+}
+
+a:hover .nav-but * {
+    color: var(--color-yellow);
+}
+
+nav * {
+    transition: color 0.1s;
+}
+
+.nav-but h1 {
+    font-size: 2.5rem;
+}
+
+.profile {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 3rem;
+    width: 3rem;
+    border: var(--color-white) 0.15rem solid;
+}

@@ -1,0 +1,26 @@
+main h2 {
+    font-size: 2.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+em {
+    color: var(--color-green);
+    font-style: normal;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bottom h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-left: 3rem;
+}

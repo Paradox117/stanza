@@ -1,0 +1,43 @@
+main {
+    grid-template-columns: 2fr 1fr;
+}
+
+.list-heading {
+    display: flex;
+    justify-content: center;
+}
+
+.list-row {
+    border: transparent;
+}
+
+form {
+    height: min-content;
+}
+
+#email {
+    margin-bottom: 1rem;
+}
+
+#message {
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+}
+
+#message h2 {
+    color: inherit;
+}
+
+input[type=submit] {
+    width: 10rem;
+    height: 2.8rem;
+}
+
+#re-passwd {
+    margin-bottom: 2rem;
+}
+
+#passwd + label {
+    margin-bottom: 2rem;
+}

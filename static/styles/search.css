@@ -1,0 +1,44 @@
+main {
+    height: calc(100vh - 6rem - 7rem - 5rem);
+}
+
+.inp-txt {
+    font-size: 3rem;
+    width: 50vw;
+    padding: 0.5rem 2rem;
+    border-radius: 5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-width: 0.4rem;
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+.inp-txt::placeholder {
+    color: var(--color-green);
+    opacity: 1;
+}
+
+.inp-sub * {
+    color: var(--color-white);
+    font-size: 3rem;
+    transition: color 0.1s;
+}
+
+.inp-sub {
+    border: solid 0.2rem var(--color-green);
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.inp-sub:hover * {
+    color: var(--color-yellow);
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}

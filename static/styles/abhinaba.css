@@ -1,0 +1,34 @@
+main{
+    height: calc(100vh - 6rem - 7rem - 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    height: 100%;
+}
+
+.inp-txt {
+    color: var(--color-black);
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    font-size: 1.2rem;
+    border: 0.2rem var(--color-green) solid;
+    border-radius: 2rem;
+    background-color: transparent;
+    width: 20vw;
+}
+#ans{
+    margin-top: 2rem;
+   
+}
+
+input[type=number] {
+    appearance: unset;
+    -moz-appearance: textfield;
+    text-align: right;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+}

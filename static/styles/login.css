@@ -1,0 +1,102 @@
+main {
+    display: flex;
+    height: calc(100vh - 4.5rem - 5rem);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-items h1 {
+    margin: 1.5rem;
+}
+
+.login-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-white);
+    padding: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+
+.inp-txt {
+    color: var(--color-black);
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    font-size: 1.2rem;
+    border: 0.2rem var(--color-green) solid;
+    border-radius: 2rem;
+    background-color: transparent;
+    width: 20vw;
+}
+
+.inp-rem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--color-white);
+    margin: 0;
+    font: inherit;
+    font-size: 1.2rem;
+    height: 1rem;
+    width: 1rem;
+    border: 0.2rem var(--color-green) solid;
+    transition: background 0.1s;
+}
+
+input[type="checkbox"]:hover {
+    background-color: var(--color-yellow);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--color-green);
+}
+
+.inp-sub {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: min-content;
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.inp-sub:hover {
+    color: var(--color-yellow);
+}
+
+.login-items a {
+    color: var(--color-green);
+    text-decoration: underline;
+    transition: color 0.1s;
+}
+
+.login-items a:hover {
+    color: var(--color-red);
+}
+
+#message {
+    margin-bottom: 0.5rem;
+    color: var(--color-red-old);
+}
+
+#message h2 {
+    color: inherit;
+}

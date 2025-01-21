@@ -1,0 +1,45 @@
+nav {
+    grid-template-columns: 1fr 1fr;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    color: var(--color-white);
+}
+
+.logo-head {
+    font-size: 15rem;
+    font-variant-caps: small-caps;
+    line-height: 75%;
+}
+
+main {
+    background-color: var(--color-white);
+    padding: 5rem;
+}
+
+.section-title {
+    display: flex;
+    padding-bottom: 3rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.section-title a h1 {
+    transition: color 0.1s;
+}
+
+.section-title a:hover h1 {
+    color: var(--color-green);
+}

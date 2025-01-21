@@ -1,0 +1,53 @@
+.image {
+    display: flex;
+    width: 15rem;
+    aspect-ratio: 2/3;
+    margin: 2rem;
+    margin-top: 0;
+}
+
+img {
+    object-fit: contain;
+    aspect-ratio: 2/3;
+    width: 100%;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20.4rem;
+    padding: 1rem;
+
+    border: 0.2rem transparent dashed;
+
+}
+
+.book-card:hover {
+    border-style: solid;
+    border: 0.2rem var(--color-green) dashed;
+}
+
+.overflow {
+    display: inline-block;
+    width: calc(100%);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-book-title {
+    font-size: 1.8rem;
+    color: var(--color-green);
+    text-align: center;
+}
+
+.card-book-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.card-book-price {
+    text-align: right;
+}
