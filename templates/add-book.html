@@ -1,0 +1,98 @@
+{% extends "general_admin.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/add-book.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>{{name}}</h1></div>
+
+    <main>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% if name == "Add Book" %}
+                <label for="name"><h2>Book Name</h2></label>
+                <input type="text" name="name" id="name">
+
+                <label for="author"><h2>Author</h2></label>
+                <input type="text" name="author" id="author">
+            {% else %}
+                <label for="name-old"><h2>Book Name</h2></label>
+                <div class="old-new">
+                    <input type="text" name="name-old" id="name-old" placeholder="Old">
+                    <input type="text" name="name-new" id="name-new" placeholder="New">
+                </div>
+
+                <label for="author-old"><h2>Author</h2></label>
+                <div class="old-new">
+                    <input type="text" name="author-old" id="author-old" placeholder="Old">
+                    <input type="text" name="author-new" id="author-new" placeholder="New">
+                </div>
+            {% endif %}
+
+            <label for="lang"><h2>Language</h2></label>
+            <input type="text" name="lang" id="lang">
+
+            <label for="tags"><h2>Genres</h2></label>
+            <input type="text" name="tags" id="tags">
+
+            <label for="rel_date"><h2>Release Date</h2></label>
+            <input type="date" name="rel_date" id="rel_date" pattern="\d{4}-\d{2}-\d{2}">
+
+            <label for="series"><h2>Series</h2></label>
+            <div id="series">
+                <input type="text" name="series" id="series" placeholder="Name">
+                <input type="number" name="series_sl_no" id="series_sl_no" placeholder="Sl no">
+            </div>
+
+            <label for="thumb"><h2>Cover</h2></label>
+            <div id="upper-last">
+                <input type="file" name="thumb" id="thumb">
+                <div id="last-inner">
+                    <label for="price"><h2>Price</h2></label>
+                    <input type="number" name="price" id="price"  placeholder="₹">
+                </div>
+            </div>
+
+
+
+            {% if name == "Add Book" %}
+                <label for="desc"><h2>Description</h2></label>
+                <div id="last">
+                    <input type="text" name="desc" id="desc">
+                    <div class="middle">
+                        <label for="qty" style="display: flex; align-items: center; justify-content: right;"><h2>Qty</h2></label>
+                        <input type="number" name="qty" id="qty">
+                    </div>
+                    <input type="submit" value="Submit">
+                </div>
+            {% else %}
+                <label for="desc"><h2>Description</h2></label>
+                <div class="sub-but">
+                    <input type="text" name="desc" id="desc">
+                    <input type="submit" value="Submit">
+                </div>
+            {% endif %}
+        </form>
+
+        <div class="list-outer">
+            <div class="list-heading">
+                <h2>Author</h2>
+                <h2>Book</h2>
+                <h2 class="qty">Qty</h2>
+            </div>
+            <div class="list">
+                {% for i in data %}
+                    <div class="list-row">
+                        <h2>{{title(i[0])}}</h2>
+                        <h2>{{title(i[1])}}</h2>
+                        <h2 class="qty">{{i[2]}}</h2>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

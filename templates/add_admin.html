@@ -1,0 +1,50 @@
+{% extends "general_admin.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/add-book.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/add-admin.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>{{name}}</h1></div>
+
+    <main>
+        <form action="" method="post">
+            <label for="email"><h2>Email</h2></label>
+            <input type="email" id="email" name="email">
+
+            <label for="passwd"><h2>Password</h2></label>
+            <input type="password" id="passwd" name="passwd">
+
+            <label for="re-passwd"><h2>Re-type Password</h2></label>
+            <input type="password" id="re-passwd" name="re-passwd" onkeyup="validate_pass()">
+
+            <input type="submit" value="Submit">
+            <div id="message"><h2>{{msg}}</h2></div>
+        </form>
+
+        <div class="list-outer">
+            <div class="list-heading">
+                <h2>Admins</h2>
+            </div>
+            <div class="list">
+                {% for i in data %}
+                    <div class="list-row">
+                        <h2>{{i[0]}}</h2>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </main>
+
+{% endblock %}
+
+{% block body_end %}
+
+    <script src="{{url_for('static', filename='scripts/register.js')}}"></script>
+
+{% endblock %}

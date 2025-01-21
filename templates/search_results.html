@@ -1,0 +1,52 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/search_results.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/card_list.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading">
+        <form action="" method="POST">
+            <input type="text" name="search" id="search" value="{{name}}" class="inp-txt">
+            <button type="submit" class="inp-sub"><i class="fa-solid fa-arrow-right-long"></i></button>
+        </form>
+    </div>
+
+    <main>
+        <div class="cards">
+
+            {% if len(data) > 0 %}
+
+                {% for i in data %}
+
+                    <a href="/book/{{i[0].lower().replace(' ', '_')+'+'+i[1].lower().replace(' ', '_')}}">
+                        <div class="book-card">
+                            <div class="image">
+                                <img src="{{url_for('static', filename='thumbs/'+i[3])}}" alt="">
+                            </div>
+                            <div class="overflow">
+                                <h2 class="overflow card-book-title">{{title(i[0])}}</h2>
+                            </div>
+                            <div class="card-book-info">
+                                <h2 class="card-book-author overflow">{{title(i[1])}}</h2>
+                                <h2 class="card-book-price">₹{{round(i[2], ".2f")}}</h2>
+                            </div>
+                        </div>
+                    </a>
+
+                {% endfor %}
+
+            {% else %}
+
+                <h1>No matching results</h1>
+
+            {% endif %}
+
+        </div>
+    </main>
+
+{% endblock %}

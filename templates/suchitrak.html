@@ -1,0 +1,33 @@
+{% extends "general.html" %}
+
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/suchitrak.css')}}">
+
+{% endblock %}
+
+
+{% block body_main %}
+
+    <div class="heading"><h1>Encrypted</h1></div>
+
+    <main>
+        <div class="upper">
+            <h1 id="main">
+                Mjqqt kwnjsi. Dtz fwj stb bnysjxxnsl ymj uwthjxx tk ijhwduynsl f hfjxjw hnumjw ns kwtsy tk dtzw ajwd jdjx. Dtz qnpj ny? Hwduytlwfumd. ny'x kzs!
+            </h1>
+        </div>
+        <div class="upper">
+            <button onclick="dcode()">Decode</button>
+        </div>
+    </main>
+
+{% endblock %}
+
+
+{% block body_end %}
+
+    <script src="{{url_for('static', filename='scripts/suchitrak.js')}}"></script>
+
+{% endblock %}

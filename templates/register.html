@@ -1,0 +1,58 @@
+{% extends "general_form.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/register.css')}}">
+
+{% endblock %}
+
+
+{% block body_main %}
+
+    <main>
+        <div class="form-items">
+            <h1>Register</h1>
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-cont">
+                    <div class="main-form">
+                        <input type="email" id="email" class="inp-txt" name="email" placeholder="Email">
+                        <input type="text" id="user" class="inp-txt" name="user" placeholder="Username">
+
+                        <input type="password" id="passwd" class="inp-txt" name="passwd" placeholder="Password">
+                        <input type="password" id="re-passwd" class="inp-txt" name="re-passwd" placeholder="Re-type Password" onkeyup="validate_pass()">
+
+                        <div class="prof">
+                            <label for="prof"><h2>Profile Pic</h2></label>
+                            <input type="file" id="prof" name="prof">
+                        </div>
+
+                    </div>
+
+                    <div class="side-form">
+                        <h2>Select the genres you like</h2>
+                        <div class="tags">
+                            {% for i in genres %}
+                                <div class="inp-rem"><input type="checkbox" id="{{i}}" name="{{i}}"><label for="{{i}}">{{title(i)}}</label></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div id="message"><h2>{{msg}}</h2></div>
+
+                <input type="submit" class="inp-sub" value="Register">
+            </form>
+
+            <div>Have an account? Login <a href="/login">here</a></div>
+            
+        </div>
+    </main>
+
+{% endblock %}
+
+{% block body_end %}
+
+    <script src="{{url_for('static', filename='scripts/register.js')}}"></script>
+
+{% endblock %}

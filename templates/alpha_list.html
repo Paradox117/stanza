@@ -1,0 +1,29 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/alpha_list.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>{{name}}</h1></div>
+
+    <main>
+
+        {% for i in a %}
+
+            <div class="cont">
+                <div class="alpha"><h1>{{i}}</h1></div>
+                <div class="list">
+                    {% for j in a[i] %}
+                        <h2><a href="/{{name.lower()}}/{{j.lower().replace(' ', '+')}}">{{title(j)}}</a></h2>
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% endfor %}
+    </main>
+
+{% endblock %}

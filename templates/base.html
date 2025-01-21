@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/text.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/nav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/card.css')}}">
+    {% block head %}
+    {% endblock %}
+    <script src="https://kit.fontawesome.com/7dda4b8572.js" crossorigin="anonymous"></script>
+    <title>{{name}} | STANZA</title>
+</head>
+<body>
+
+    {% block nav %}
+    {% endblock %}
+
+    {% block body_main %}
+    {% endblock %}
+
+    <footer>
+        <h3><a href="/eggs/suchitrak">Suchitrak</a> | <a href="/eggs/trisha">Trisha</a> | <a href="/eggs/abhinaba">Abhinaba</a> | <a href="/eggs/naireet">Naireet</a> | <a href="/eggs/zinnia">Zinnia</a> | <a href="/eggs/ayushmaan">Ayushmaan</a></h3>
+    </footer>
+
+
+    {% block body_end %}
+    {% endblock %}
+</body>
+</html>

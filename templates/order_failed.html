@@ -1,0 +1,38 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <style>
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: var(--color-red-old);
+            font-size: 5rem;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>Message</h1></div>
+
+    <main>
+        <h1>Order Failed</h1>
+    </main>
+
+{% endblock %}
+
+{% block body_end %}
+
+    <script>
+        setTimeout(function(){
+            window.location.href = '/';
+        }, 3000);
+    </script>
+
+{% endblock %}

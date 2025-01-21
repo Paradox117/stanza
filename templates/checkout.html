@@ -1,0 +1,73 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/checkout.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>Checkout</h1></div>
+
+    <main>
+        <div class="data">
+            <div class="img">
+                <img src="{{url_for('static', filename='thumbs/'+data[7])}}" alt="">
+            </div>
+            <div class="info">
+                <h1 class="">{{title(data[0])}}</h1>
+                <h2>{{title(data[1])}}</h2>
+                <div class="bottom">
+                    <div></div>
+                    <div>
+                        <h2>{{title(data[2])}}</h2>
+                        <h2>{{title(data[3])}}</h2>
+
+                        {% if data[4] %}
+                            <h2>{{title(data[4])}} - {{data[5]}}</h2>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="" method="post">
+            <div class="pay">
+                <h1>Payment</h1>
+                <div class="price">
+                    <h2 class="left">₹<span id="price">{{data[6]}}</span>0</h2>
+                    <h2 class="center">×</h2>
+                    <div id="push-left">
+                        <div></div>
+                        <input type="number" name="qty" id="qty" class="right" min="1" max="{{data[-1]}}" value="1" placeholder="qty" onchange="pay()">
+                    </div>
+                </div>
+                <div class="add">
+                    <h3 class="left">Delivery</h3>
+                    <h3 class="center">+</h3>
+                    <h3 class="right">₹<span id="del">{{charges[0]}}</span>0</h3>
+
+                    <h3 class="left">Discount (<span id="dis-per">{{charges[1]}}</span>%)</h3>
+                    <h3 class="center">-</h3>
+                    <h3 class="right">₹<span id="dis">40.00</span></h3>
+                </div>
+                <h1>₹<span id="total"></span></h1>
+                <input type="hidden" name="total" id="total-in">
+            </div>
+            <div class="addr">
+                <input type="text" name="addr" id="addr" placeholder="Delivery Address">
+                <h3>Expected Delivery: {{exp_date.strftime('%Y/%m/%d')}}</h3>
+                <input type="submit" value="Place Order">
+                <h3>*All Payments are made through cash on delivery*</h3>
+            </div>
+
+        </form>
+    </main>
+
+{% endblock %}
+
+{% block body_end %}
+
+    <script src="{{url_for('static', filename='scripts/checkout.js')}}"></script>
+
+{% endblock %}

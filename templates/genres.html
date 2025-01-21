@@ -1,0 +1,45 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/genres.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>Genres</h1></div>
+
+    <main>
+
+        {% for i in genres %}
+            <div class="cont">
+
+                <a href="/genres/{{i.lower().replace(' ', '-')}}"><h1>-- {{title(i)}} --</h1></a>
+                
+
+                <div class="cards">
+                    {% for j in genres[i] %}
+                        <a href="#">
+                            <div class="book-card">
+                                <div class="image">
+                                    <img src="{{url_for('static', filename='thumbs/'+j[3])}}" alt="">
+                                </div>
+                                <div class="overflow">
+                                    <h2 class="overflow card-book-title">{{title(j[0])}}</h2>
+                                </div>
+                                <div class="card-book-info">
+                                    <h2 class="card-book-author overflow">{{title(j[1])}}</h2>
+                                    <h2 class="card-book-price">₹{{round(j[2], ".2f")}}</h2>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        {% endfor %}
+    </main>
+
+{% endblock %}

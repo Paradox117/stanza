@@ -1,0 +1,26 @@
+{% extends "general.html" %}
+
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/trisha.css')}}">
+
+{% endblock %}
+
+
+{% block body_main %}
+
+    <div class="heading"><h1>Random facts about Books</h1></div>
+
+    <main>
+        <h2>1. There's a word for loving the smell of old books: <em>Bibliosmia</em></h2>
+        <h2>2. The longest sentence ever printed has 823 words</h2>
+        <div class="bottom">
+            <h2>3. The three most read books in the world are:</h2>
+            <h3>- The Holy Bible</h3>
+            <h3>- Quotations from Chairman Mao Tse-Tung</h3>
+            <h3>- Harry Potter</h3>
+        </div>
+    </main>
+
+{% endblock %}

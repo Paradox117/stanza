@@ -1,0 +1,78 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/bp.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+
+
+    <main>
+        <div id="bookpicture">
+            <div class="image">
+
+                <a href="{{url_for('static', filename='thumbs/'+data[7])}}" target="_blank"><img src="{{url_for('static', filename='thumbs/'+data[7])}}" alt="Error"></a>
+            </div>
+
+        </div>
+        <div class="nestede">
+            <div>
+                <h1 class="bookname agn">
+                    {{title(data[0])}}
+                </h1>
+                <div id="authn" class="b">
+                    <h2 id="center">{{title(data[1])}}</h2>
+                </div>
+                
+            </div>
+            <div id="bpbody">
+                <h1 id="price">₹{{round(data[6], ".2f")}}</h1>
+                <div class="fleks">
+                    <h3>Availability: </h3>
+                    {% if data[-1] > 0 %}
+                        <h3 id="qtystat1">In stock</h3>
+                    {% else %}
+                        <h3 id="qtystat2">Out of stock</h3>
+                    {% endif %}
+                </div>
+
+                {% if data[4] %}
+                    <h3 id=info>{{title(data[2])}} | {{title(data[3])}} | {{title(data[4])}} - {{data[5]}}</h3>
+                {% else %}
+                    <h3 id=info>{{title(data[2])}} | {{title(data[3])}}</h3>
+                {% endif %}
+
+                <div id="about">
+
+                    {% if data[9] %}
+
+                        <h3>{{data[9]}}</h3>
+
+                    {% else %}
+
+                        <h3>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum nulla cupiditate culpa voluptatum ea aspernatur incidunt non fuga facilis nihil. Nemo suscipit repellendus natus inventore, commodi, veritatis recusandae autem repudiandae totam modi delectus earum cupiditate non repellat facere libero sint illo, quasi cum a explicabo. Est dolorem laboriosam aliquam voluptate voluptatem assumenda perferendis placeat porro. Tempora eos doloremque dolorum reprehenderit quod soluta eum rem consequuntur, delectus at, iusto voluptatibus voluptas, deserunt velit amet ullam harum nemo. Excepturi labore quasi molestias quis earum. Repudiandae deserunt qui tenetur asperiores mollitia! Quia odit ex laboriosam dolorem quo enim architecto laudantium possimus dolorum expedita aliquid accusamus corrupti voluptatibus aperiam consequatur deserunt, repellat deleniti minus iusto vitae quas? Quam quis excepturi repudiandae repellendus eum consequuntur itaque sunt doloribus nostrum. Voluptate autem repellendus corporis fugit ipsum ab! Libero iure ab amet autem iusto consectetur vero architecto minima ipsum! Nisi facilis excepturi mollitia cupiditate vero eaque sequi iusto soluta unde rerum minima perferendis nam quod nulla dolore totam laudantium nesciunt quam iure, molestiae aperiam. Tenetur laboriosam voluptates maxime quas quidem numquam, porro itaque ab reiciendis. Corporis minus dignissimos quae eius aperiam voluptatum, inventore rem error assumenda, iusto vero quas molestiae dolorem facilis. At laudantium corporis accusantium, veritatis expedita maiores incidunt quidem, labore, magnam earum voluptates adipisci! Rem totam similique quae quia a voluptas deserunt et, at praesentium debitis repellendus nobis illum molestiae distinctio facere id, iusto laboriosam illo voluptate neque porro! Totam eos quae sapiente hic culpa ducimus deserunt expedita molestias nesciunt labore tenetur, officia laborum ad itaque assumenda ab cum nobis. Voluptatum nam voluptatibus ipsum eos enim! Odio magni optio officia iste! Impedit illum exercitationem cum facilis fugit, blanditiis ea! Dolores magni et voluptate eum earum recusandae, cum tempore in expedita natus quaerat quis fugiat veniam qui. Porro quo autem temporibus mollitia nam dolore, tempora delectus facere ab, voluptatum saepe laborum. Labore id praesentium consectetur ipsum hic alias dolorem, accusamus saepe, distinctio obcaecati veritatis sit nesciunt minima unde accusantium quisquam tempore magnam quis architecto adipisci dolorum dignissimos ea blanditiis. Exercitationem maxime asperiores ex. Sapiente itaque repellendus natus hic modi illo atque, dolore delectus impedit, ipsam eius? Illo consequatur sapiente commodi debitis provident! Molestias, veniam pariatur repellendus ipsam commodi debitis consequuntur dolorum voluptas quas quaerat fugiat, est optio mollitia ad dicta! Debitis dolorum fuga, provident in consequatur illo repudiandae sunt dolorem voluptatum? Quasi vitae, minima debitis quos deserunt natus suscipit aperiam autem in dolore ullam cupiditate quisquam. Qui, ex fugiat? Ducimus, impedit aspernatur? Maiores maxime voluptatibus sapiente. Consequatur itaque nihil voluptatem sunt! Voluptates officia fuga culpa mollitia eveniet voluptas maiores ipsa numquam doloremque asperiores, assumenda aperiam, a non ullam perspiciatis aliquid voluptate? Quae, ratione ea. Itaque magnam corrupti voluptatem minima suscipit. Numquam velit aliquam autem delectus, temporibus, nihil soluta repellendus cumque dolorum repellat blanditiis molestiae vero quisquam officia dolore. Excepturi blanditiis facilis officia optio. Rerum molestias laboriosam, natus esse illum id illo facere laborum quia sint consequuntur tempora asperiores in nesciunt eius, qui perspiciatis veritatis blanditiis minima unde animi? Quia ipsa enim blanditiis reiciendis, eveniet ratione et.
+                        </h3>
+
+                    {% endif %}
+                </div>
+                <div>  
+                    <form action="/checkout/{{data[0].lower().replace(' ', '_')}}|{{data[1].lower().replace(' ', '_')}}">
+                        {% if data[-1] > 0 %}
+                            <button type="submit">Buy Now</button>
+                        {% else %}
+                            <button disabled>Buy Now</button>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+{% endblock %}

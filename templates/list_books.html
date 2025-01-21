@@ -1,0 +1,51 @@
+{% extends "general_admin.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/add-book.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/list_books.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>{{name}}</h1></div>
+
+    <main>
+
+        <div class="list-outer">
+            <div class="list-heading">
+                <h2>Cover</h2>
+                <h2>Book</h2>
+                <h2>Author</h2>
+                <h2>Language</h2>
+                <h2>Genres</h2>
+                <h2>Series</h2>
+                <h2>Release Date</h2>
+                <h2>Price</h2>
+                <h2>Qty</h2>
+            </div>
+            <div class="list">
+                    {% for i in data %}
+                        <div class="list-row">
+                            <img src="{{url_for('static', filename='thumbs/' + i[7])}}" alt="">
+                            <h2>{{title(i[0])}}</h2>
+                            <h2>{{title(i[1])}}</h2>
+                            <h2>{{title(i[2])}}</h2>
+                            <h2>{{title(i[3])}}</h2>
+                            {% if i[4] %}
+                                <h2>{{title(i[4])}} - {{i[5]}}</h2>
+                            {% else %}
+                                <h2>N/A</h2>
+                            {% endif %}
+                            <h2>{{title(i[8])}}</h2>
+                            <h2 class="qty">₹{{round(i[6], ".2f")}}</h2>
+                            <h2 class="qty">{{i[-1]}}</h2>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/general.css')}}">
+
+    {% block head_after %}
+    {% endblock %}
+
+{% endblock %}
+
+
+{% block nav %}
+
+    <nav>
+        <div class="nav-left">
+            <a href="/"><div class="nav-but"><h1 class="nav-txt">StanzA</h1></div></a>
+        </div>
+        <div class="nav-centre">
+            <a href="/authors"><div class="nav-but"><h2>AUTHORS</h2></div></a>
+            <a href="/series"><div class="nav-but"><h2>SERIES</h2></div></a>
+            <a href="/genres"><div class="nav-but"><h2>GENRES</h2></div></a>
+            <a href="/best"><div class="nav-but"><h2>BEST SELLERS</h2></div></a>
+            <a href="/new"><div class="nav-but"><h2>NEW RELEASES</h2></div></a>
+        </div>
+        <div class="nav-right">
+            {% if name != 'Search' %}
+                <a href="/search"><div class="nav-but"><i class="fa-solid fa-magnifying-glass fa-lg"></i></div></a>
+            {% endif %}
+            {% if not session['user'] %}
+                <a href="/login"><div class="nav-but"><h2>LOGIN</h2></div></a>
+                <a href="/register"><div class="nav-but"><h2>REGISTER</h2></div></a>
+            {% else %}
+                {% if session['pic'] == True %}
+                    <a href="/profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 340 340">
+                            <path fill="#FFECD1" d="m169,.5a169,169 0 1,0 2,0zm0,86a76,76 0 1 1-2,0zM57,287q27-35 67-35h92q40,0 67,35a164,164 0 0,1-226,0"/>
+                        </svg>
+                    </a>
+                {% else %}
+                    <a href="/profile"><img class="profile" src="{{url_for('static', filename='profiles/'+session['pic'])}}" alt=""></a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </nav>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='styles/up.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading">
+        <h1>{{name}}</h1>
+    </div>
+
+    <main>
+        <div id="pfp">
+            {% if session['pic'] != True %}
+                <div id="pdiv"><img id="dp" src="{{url_for('static', filename='profiles/'+session['pic'])}}"></div>
+            {% else %}
+                <div id="pdiv">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23rem" height="23rem" viewBox="0 0 340 340">
+                        <path fill="#714133" d="m169,.5a169,169 0 1,0 2,0zm0,86a76,76 0 1 1-2,0zM57,287q27-35 67-35h92q40,0 67,35a164,164 0 0,1-226,0"/>
+                    </svg>
+                </div>
+            {% endif %}
+            <div id="dpt">
+                <h1 id="user">Welcome, {{data[1]}}.</h1>
+                <h3 class="youser mar">Email: {{data[0]}}</h3>
+                <h3 class="youser">Selected Genres:</h3>
+                <h3 class="youser pad">{{data[2]}}</h3>
+
+                <form action="/logout">
+                    <input type="submit" value="Logout">
+                </form>
+            </div>
+            </div>
+        </div>
+        <div id="details">
+            {% if orders != [] %}
+                <h1 class="agn" id="orh">-- Order History --</h1>
+                <div id="orders">
+
+
+                    {% for i in orders %}
+
+
+                        <div class="order">
+                            <img src="{{url_for('static', filename='thumbs/'+i[2])}}" alt="">
+                            <div class="info">
+                                <div class="book-info">
+                                    <h1><a href="/book/{{i[0].lower().replace(' ', '_')+'+'+i[1].lower().replace(' ', '_')}}">{{title(i[0])}}</a></h1>
+                                    <h2>{{title(i[1])}}</h2>
+                                    <div class="bottom">
+                                        <div></div>
+                                        <div class="under">
+                                            {% if i[-1] < 100 %}
+                                                <div class="up"><h3>On Its Way</h3><h3 style="text-align: right;">Expected by: {{i[7].strftime('%Y/%m/%d')}}</h3></div>
+                                            {% else %}
+                                                <div class="up"><h3>Arrived</h3><h3 style="text-align: right;">Deliverd on: {{i[7].strftime('%Y/%m/%d')}}</h3></div>
+                                            {% endif %}
+                                            <div class="outline">
+                                                <div class="track" style="width: {{i[-1]}}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-info">
+                                    <div class="up">
+                                        <h2>Qty: {{i[4]}}</h2>
+                                        <h2 style="text-align: right;">Ordered: {{i[3].strftime('%Y/%m/%d')}}</h2>
+                                    </div>
+                                    <div class="bottom sec">
+                                        <h1 class="price">₹{{round(i[8], ".2f")}}</h1>
+                                        <h2 style="text-align: right;">{{i[6]}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    {% endfor %}
+
+
+                </div>
+            {% endif %}
+        </div>
+    </main>
+
+{% endblock %}

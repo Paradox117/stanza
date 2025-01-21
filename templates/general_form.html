@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/form.css')}}">
+
+    {% block head_after %}
+    {% endblock %}
+
+{% endblock %}
+
+{% block nav %}
+
+    <nav>
+        <div class="nav-left">
+            <a href="/"><div class="nav-but"><h1 class="nav-txt">StanzA</h1></div></a>
+        </div>
+        <div class="nav-centre">
+            <a href="/authors"><div class="nav-but"><h2>AUTHORS</h2></div></a>
+            <a href="/series"><div class="nav-but"><h2>SERIES</h2></div></a>
+            <a href="/genres"><div class="nav-but"><h2>GENRES</h2></div></a>
+            <a href="/best"><div class="nav-but"><h2>BEST SELLERS</h2></div></a>
+            <a href="/new"><div class="nav-but"><h2>NEW RELEASES</h2></div></a>
+        </div>
+        <div class="nav-right">
+            <a href="/search"><div class="nav-but"><i class="fa-solid fa-magnifying-glass fa-lg"></i></div></a>
+        </div>
+    </nav>
+
+{% endblock %}

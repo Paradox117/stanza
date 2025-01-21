@@ -1,0 +1,44 @@
+{% extends "general.html" %}
+
+
+{% block head_after %}
+
+    <style>
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button a h1 {
+            color: var(--color-white);
+            transition: color 0.1s;
+        }
+
+        button {
+            color: var(--color-white);
+            background-color: var(--color-green);
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 5rem;
+        }
+
+        button:hover a h1 {
+            color: var(--color-yellow);
+        }
+
+    </style>
+
+{% endblock %}
+
+
+{% block body_main %}
+
+    <div class="heading"><h1>NSFW</h1></div>
+
+    <main>
+       <button><a href="/book/the_holy_bible+unknown"><h1 id="message">Click here for NSFW Literature</h1></a></button>
+    </main>
+
+{% endblock %}

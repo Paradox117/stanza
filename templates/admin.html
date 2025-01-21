@@ -1,0 +1,50 @@
+{% extends "general_admin.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/admin.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>Admin</h1></div>
+
+    <main>
+
+        <a href="/admin/add-book">
+            <div class="outer">
+                <div class="inner">
+                    <i class="fa-solid fa-plus symbol"></i>
+                    <h1>Add Books</h1>
+                </div>
+            </div>
+        </a>
+        <a href="/admin/modify-book">
+            <div class="outer">
+                <div class="inner">
+                    <i class="fa-solid fa-pen-to-square symbol"></i>
+                    <h1>Modify Books</h1>
+                </div>
+            </div>
+        </a>
+        <a href="/admin/list-books">
+            <div class="outer">
+                <div class="inner">
+                    <i class="fa-solid fa-table-list symbol"></i>
+                    <h1>List Books</h1>
+                </div>
+            </div>
+        </a>
+        <a href="/admin/add-admin">
+            <div class="outer">
+                <div class="inner">
+                    <i class="fa-solid fa-user-plus symbol"></i>
+                    <h1>Add Admins</h1>
+                </div>
+            </div>
+        </a>
+
+    </main>
+
+{% endblock %}

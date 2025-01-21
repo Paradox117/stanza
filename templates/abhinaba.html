@@ -1,0 +1,23 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+
+
+<link rel="stylesheet" href="{{url_for('static', filename='styles/abhinaba.css')}}">
+
+{% endblock %}
+
+
+{% block body_main %}
+<div class="heading"><h1>INTEGRAL PART OF THE UNIVERSE</h1></div>
+<main>
+
+    <img src="{{url_for('static', filename='thumbs/integral.jpeg')}}">
+    <form action="" method="post">
+        <input type="number" name="ans" id="ans" class="inp-txt" placeholder="Enter your answer">
+        
+    </form>
+</main>
+
+{% endblock %}

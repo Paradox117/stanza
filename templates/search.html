@@ -1,0 +1,21 @@
+{% extends "general.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/search.css')}}">
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="heading"><h1>Search</h1></div>
+
+    <main>
+        <form action="" method="post">
+            <input type="text" name="query" class="inp-txt" placeholder="&#xf002" style="font-family: Lora, FontAwesome;" autofocus>
+            <button type="submit" class="inp-sub"><i class="fa-solid fa-arrow-right-long"></i></button>
+        </form>
+    </main>
+
+{% endblock %}

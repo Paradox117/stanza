@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}">
+
+{% endblock %}
+
+
+{% block nav %}
+
+    <nav>
+        <div class="nav-left">
+            <a href="/authors"><div class="nav-but"><h2>AUTHORS</h2></div></a>
+            <a href="/series"><div class="nav-but"><h2>SERIES</h2></div></a>
+            <a href="/genres"><div class="nav-but"><h2>GENRES</h2></div></a>
+            <a href="/best"><div class="nav-but"><h2>BEST SELLERS</h2></div></a>
+            <a href="/new"><div class="nav-but"><h2>NEW RELEASES</h2></div></a>
+        </div>
+        <div class="nav-right">
+            <a href="/search"><div class="nav-but"><i class="fa-solid fa-magnifying-glass fa-lg"></i></div></a>
+            {% if not session['user'] %}
+                <a href="/login"><div class="nav-but"><h2>LOGIN</h2></div></a>
+                <a href="/register"><div class="nav-but"><h2>REGISTER</h2></div></a>
+            {% else %}
+                {% if session['pic'] == True %}
+                    <a href="/profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 340 340">
+                            <path fill="#FFECD1" d="m169,.5a169,169 0 1,0 2,0zm0,86a76,76 0 1 1-2,0zM57,287q27-35 67-35h92q40,0 67,35a164,164 0 0,1-226,0"/>
+                        </svg>
+                    </a>
+                {% else %}
+                    <a href="/profile"><img class="profile" src="{{url_for('static', filename='profiles/'+session['pic'])}}" alt=""></a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block body_main %}
+
+    <div class="logo"><h1 class="logo-head">StanzA</h1><h1>BOOK STORE</h1></div>
+
+    <main>
+
+
+
+        <div class="section-title"><h1>-- Recomended --</h1></div>
+        
+        <div class="cards">
+
+            {% for i in recomend %}
+
+                <a href="/book/{{i[0].lower().replace(' ', '_')+'+'+i[1].lower().replace(' ', '_')}}">
+                    <div class="book-card">
+                        <div class="image">
+                            <img src="{{url_for('static', filename='thumbs/'+i[3])}}" alt="">
+                        </div>
+                        <div class="overflow">
+                            <h2 class="overflow card-book-title">{{title(i[0])}}</h2>
+                        </div>
+                        <div class="card-book-info">
+                            <h2 class="card-book-author overflow">{{title(i[1])}}</h2>
+                            <h2 class="card-book-price">₹{{round(i[2], ".2f")}}</h2>
+                        </div>
+                    </div>
+                </a>
+
+            {% endfor %}
+            
+
+        </div>
+
+
+
+        <div class="section-title"><a href="/new"><h1>-- New Releases --</h1></a></div>
+        
+        <div class="cards">
+
+            {% for i in new %}
+
+                <a href="/book/{{i[0].lower().replace(' ', '_')+'+'+i[1].lower().replace(' ', '_')}}">
+                    <div class="book-card">
+                        <div class="image">
+                            <img src="{{url_for('static', filename='thumbs/'+i[3])}}" alt="">
+                        </div>
+                        <div class="overflow">
+                            <h2 class="overflow card-book-title">{{title(i[0])}}</h2>
+                        </div>
+                        <div class="card-book-info">
+                            <h2 class="card-book-author overflow">{{title(i[1])}}</h2>
+                            <h2 class="card-book-price">₹{{round(i[2], ".2f")}}</h2>
+                        </div>
+                    </div>
+                </a>
+
+            {% endfor %}
+
+            
+
+        </div>
+
+
+
+        <div class="section-title"><a href="/best"><h1>-- Bestsellers --</h1></a></div>
+        
+        <div class="cards">
+            {% for i in best %}
+
+                <a href="/book/{{i[0].lower().replace(' ', '_')+'+'+i[1].lower().replace(' ', '_')}}">
+                    <div class="book-card">
+                        <div class="image">
+                            <img src="{{url_for('static', filename='thumbs/'+i[3])}}" alt="">
+                        </div>
+                        <div class="overflow">
+                            <h2 class="overflow card-book-title">{{title(i[0])}}</h2>
+                        </div>
+                        <div class="card-book-info">
+                            <h2 class="card-book-author overflow">{{title(i[1])}}</h2>
+                            <h2 class="card-book-price">₹{{round(i[2], ".2f")}}</h2>
+                        </div>
+                    </div>
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+
+
+        
+    </main>
+
+{% endblock %}
+
+{%block body_end%}
+
+<script>
+    document.addEventListener('keydown', function(event) {
+      // Check if the "Alt" key is pressed
+      if (event.altKey) {
+        // Check if the key combination "b", "o", "n", and "k" are pressed in sequence
+        if (event.key === 'b' && event.code === 'KeyB') {
+          document.addEventListener('keydown', function(event) {
+            if (event.key === 'o' && event.code === 'KeyO') {
+              document.addEventListener('keydown', function(event) {
+                if (event.key === 'n' && event.code === 'KeyN') {
+                  document.addEventListener('keydown', function(event) {
+                    if (event.key === 'k' && event.code === 'KeyK') {
+                      // Redirect to lol.html when the keybind is matched
+                      window.location.href = "\\asdjfihnndfsfghdg";
+                    }
+                  });
+                }
+              });
+            }
+          });
+        }
+      }
+    });
+</script>
+
+{%endblock%}

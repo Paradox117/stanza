@@ -1,0 +1,32 @@
+{% extends "general_form.html" %}
+
+{% block head_after %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/login.css')}}">
+
+{% endblock %}
+
+
+{% block body_main %}
+
+    <main>
+        <div class="form-items">
+            <h1>{{name}}</h1>
+
+            <form action="" method="post">
+                <input type="text" name="email" id="email" class="inp-txt" placeholder="Email">
+                <input type="password" name="passwd" id="passwd" class="inp-txt" placeholder="Password">
+                <div class="inp-rem"><input type="checkbox" name="remember" id="remember"><label for="remember">Remember Me</label></div>
+
+                <div id="message"><h2>{{msg}}</h2></div>
+
+                <input type="submit" class="inp-sub" value="Login">
+            </form>
+            {% if name == 'Login' %}
+                <div>No account? Join <a href="/register">here</a></div>
+            {% endif %}
+            
+        </div>
+    </main>
+
+{% endblock %}
