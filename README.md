@@ -52,5 +52,4 @@ This project was developed as part of the **AISSCE 2024 Computer Science Practic
 I contributed to the backend development of the project, focusing on implementing core Python functionality, without the Flask portion. My responsibilities included:  
 - Developing **sales-related functions** to manage transactions and revenue tracking.  
 - Implementing **search-related features** to enhance user experience.  
-- Managing and maintaining the **database schema** (`bookstore.sql`) to ensure efficient data storage and retrieval.  
-- Writing and optimizing **SQL queries** to support the application's functionality and performance.  
+- Managing and maintaining the **database schema** (`bookstore.sql`) to ensure efficient data storage and retrieval, alongside the SQL queries.   
